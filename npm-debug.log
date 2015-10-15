@@ -1,0 +1,75 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'body-parse',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.40
+4 verbose node symlink /usr/bin/node
+5 warn package.json bookapi@1.0.0 No description
+6 warn package.json bookapi@1.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'body-parse', null ]
+9 verbose cache add name=undefined spec="body-parse" args=["body-parse",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'body-parse',
+10 verbose parsed url   path: 'body-parse',
+10 verbose parsed url   href: 'body-parse' }
+11 silly lockFile 0c0fa7c3-body-parse body-parse
+12 verbose lock body-parse /home/boom/.npm/0c0fa7c3-body-parse.lock
+13 silly lockFile 0c0fa7c3-body-parse body-parse
+14 silly lockFile 0c0fa7c3-body-parse body-parse
+15 verbose addNamed [ 'body-parse', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile de7bf0d8-body-parse body-parse@
+18 verbose lock body-parse@ /home/boom/.npm/de7bf0d8-body-parse.lock
+19 silly addNameRange { name: 'body-parse', range: '*', hasData: false }
+20 verbose request where is /body-parse
+21 verbose request registry https://registry.npmjs.org/
+22 verbose request id 58602f665900f89b
+23 verbose url raw /body-parse
+24 verbose url resolving [ 'https://registry.npmjs.org/', './body-parse' ]
+25 verbose url resolved https://registry.npmjs.org/body-parse
+26 verbose request where is https://registry.npmjs.org/body-parse
+27 info trying registry request attempt 1 at 14:34:55
+28 http GET https://registry.npmjs.org/body-parse
+29 http 404 https://registry.npmjs.org/body-parse
+30 silly registry.get cb [ 404,
+30 silly registry.get   { 'content-type': 'application/json',
+30 silly registry.get     'cache-control': 'max-age=0',
+30 silly registry.get     'content-length': '2',
+30 silly registry.get     'accept-ranges': 'bytes',
+30 silly registry.get     date: 'Thu, 15 Oct 2015 21:34:56 GMT',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     age: '0',
+30 silly registry.get     connection: 'keep-alive',
+30 silly registry.get     'x-served-by': 'cache-sjc3123-SJC',
+30 silly registry.get     'x-cache': 'MISS',
+30 silly registry.get     'x-cache-hits': '0',
+30 silly registry.get     'x-timer': 'S1444944896.003212,VS0,VE158' } ]
+31 silly lockFile de7bf0d8-body-parse body-parse@
+32 silly lockFile de7bf0d8-body-parse body-parse@
+33 error 404 Not Found
+33 error 404
+33 error 404 'body-parse' is not in the npm registry.
+33 error 404 You should bug the author to publish it
+33 error 404 It was specified as a dependency of 'bookapi'
+33 error 404
+33 error 404 Note that you can also install from a
+33 error 404 tarball, folder, or http url, or git url.
+34 error System Linux 3.13.0-65-generic
+35 error command "/usr/bin/node" "/usr/bin/npm" "install" "body-parse" "--save"
+36 error cwd /home/boom/workspace/nodeplay
+37 error node -v v0.10.40
+38 error npm -v 1.4.28
+39 error code E404
+40 verbose exit [ 1, true ]
