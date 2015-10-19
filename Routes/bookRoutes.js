@@ -1,43 +1,26 @@
 var express = require('express');
 
-var routes = function(){
+var routes = function(Book){
   var bookRouter = express.Router();
 
+  var bookController = require('../Controllers/bookController')(Book)
   bookRouter.route('/')
-    .post(function(req, res){
-      // requires body-parser
-      var book = new Book(req.body);
-  
-      book.save();
-      res.status(201).send(book);
-    })
-    .get(function(req, res){
-      var query = {};
-  
-      if(req.query.genre)
-      {
-        query.genre = req.query.genre;
-      }
-      Book.find(query, function(err, books){
-        if(err)
-          res.status(500).send(err)
-        else
-          res.json(books);
-      });
-    });
+    .post(bookController.post)
+    .get(bookController.get);
+
   // use tells it to use middleware
   bookRouter.use('/:bookId', function(req, res, next){
     Book.findById(req.params.bookId, function(err, books){
-        if(err)
-          res.status(500).send(err);
-        else if(book){
-          req.book = book;
-          next();
-        }
-        else {
-          res.status(404).send('no book found');
-        }
-      });
+      if(err)
+        res.status(500).send(err);
+      else if(book){
+        req.book = book;
+        next();
+      }
+      else {
+        res.status(404).send('no book found');
+      }
+    });
   });
 
   bookRouter.route('/:bookId')
@@ -54,14 +37,14 @@ var routes = function(){
           res.status(500).send(err);
         else{
           res.json(req.book);
-        };
-      res.json(req.book);
+        }
+      });
     })
     .patch(function(req, res){
       if(req.body._id)
         delete req.body._id;
       for(var p in req.body){
-        req.book[p] = req.body[p]
+        req.book[p] = req.body[p];
       }
       req.book.save(function(err){
         if(err)
@@ -82,6 +65,5 @@ var routes = function(){
     });
   return bookRouter;
 };
-
 
 module.exports = routes;

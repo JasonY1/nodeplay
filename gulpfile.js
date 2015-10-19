@@ -2,7 +2,8 @@
 // Create instance of gulp
 
 var gulp = require('gulp'),
-    nodemon = require('gulp-nodemon');
+    nodemon = require('gulp-nodemon'),
+    gulpMocha = require('gulp-mocha');
 
 // nodemon takes JSON object to configure itself
 gulp.task('default', function(){
@@ -18,4 +19,10 @@ gulp.task('default', function(){
   .on('restart', function(){
     console.log('Restartng');
   });
+});
+
+// Running tests
+gulp.task('test', function(){
+  gulp.src('Tests/*.js', {read: false})
+    .pipe(gulpMocha({reporter: 'nyan'}))
 });
